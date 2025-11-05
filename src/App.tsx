@@ -1,24 +1,16 @@
-import { ReactLenis } from '@studio-freight/react-lenis';
 import { motion, useInView, useMotionTemplate, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Hero from './components/Hero';
+import StreamingPlatforms from './components/StreamingPlatforms';
+import { Timeline } from './components/timeline';
 
 export const SmoothScrollHero = () => {
 	return (
 		<div className='bg-zinc-950'>
-			<ReactLenis
-				root
-				options={{
-					// Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
-					lerp: 0.05,
-					//   infinite: true,
-					//   syncTouch: true,
-				}}
-			>
-				{/* <Nav /> */}
-				<HeroSection />
-				<Schedule />
-			</ReactLenis>
+			<HeroSection />
+			<Schedule />
+			<StreamingPlatforms />
+            <Timeline />
 		</div>
 	);
 };
